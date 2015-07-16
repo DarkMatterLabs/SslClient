@@ -15,7 +15,7 @@ public class Convert {
 
 	public static byte[] fromHex(String hex) {
 		if (hex.length() % 2 != 0) {
-			hex = "0" + hex;
+			throw new IllegalArgumentException("Invalid hex input, odd number of digits");
 		}
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         for(int i = 0; i < hex.length(); i += 2) {
