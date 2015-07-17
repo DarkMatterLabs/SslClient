@@ -16,6 +16,7 @@ public class Handler extends SimpleChannelUpstreamHandler {
 		super.messageReceived(ctx, e);
 		ChannelBuffer buff = (ChannelBuffer)e.getMessage();
 		String hex = toHex(buff.array(), buff.readableBytes());
+		LOG.info("Received message:");
 		System.out.print(hex);
 	}
 
